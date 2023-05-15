@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: justingodden/mystreamlitapp:0.1.0 # replace with your username if you'd like
+      ports:
+        - containerPort: 8501
