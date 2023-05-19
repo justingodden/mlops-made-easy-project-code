@@ -1,20 +1,20 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: argocd-ingress
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  source:
-    repoURL: git@github.com:justingodden/mlops-made-easy-project-code.git
-    targetRevision: HEAD
-    path: 06-continuous-delivery/system/argocd-ingress
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: argocd-ingress
+#   namespace: argocd
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   project: default
+#   source:
+#     repoURL: git@github.com:justingodden/mlops-made-easy-project-code.git
+#     targetRevision: HEAD
+#     path: 06-continuous-delivery/system/argocd-ingress
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: argocd
+#   syncPolicy:
+#     automated:
+#       selfHeal: true
+#       prune: true
