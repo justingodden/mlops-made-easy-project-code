@@ -1,0 +1,12 @@
+replicas: 1
+
+image:
+  name: justingodden/mystreamlitapp
+  tag: 0.1.0
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: true
+  urlPath: streamlit
