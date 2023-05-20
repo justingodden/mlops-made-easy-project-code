@@ -10,7 +10,6 @@ spec:
   source:
     repoURL: git@github.com:justingodden/mlops-made-easy-project-code.git
     path: 06-continuous-delivery/apps/streamlit-dashboard
-    targetRevision: "*"
     helm:
       releaseName: streamlit-dashboard
   destination:
