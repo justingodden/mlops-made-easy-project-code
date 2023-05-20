@@ -7,16 +7,20 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: https://github.com/kubernetes/ingress-nginx.git
-    targetRevision: HEAD
-    path: deploy/static/provider/kind
+  sources:
+    - repoURL: https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      # targetRevision: "*"
+      helm:
+        releaseName: ingress-nginx
+        valueFiles:
+          - $values/06-continuous-delivery/system/nginx-ingress-controller-kind/values.yaml
+    - repoURL: git@github.com:justingodden/mlops-made-easy-project-code.git
+      # targetRevision: HEAD
+      ref: values
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: ingress-nginx
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true
