@@ -13,6 +13,11 @@ spec:
     targetRevision: "*"
     helm:
       releaseName: minio
+      parameters:
+        - name: ingress.enabled
+          value: "true"
+        - name: ingress.hostname
+          value: "minio.localhost"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: minio
